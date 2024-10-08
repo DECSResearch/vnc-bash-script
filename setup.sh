@@ -25,7 +25,7 @@ After=display-manager.service network.target syslog.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/x11vnc -forever -display :0 -auth guess -passwd adminadmin123
-User=c2srnano06
+ExecStop=/usr/bin/killall x11vnc
 Restart=on-failure
 
 [Install]
